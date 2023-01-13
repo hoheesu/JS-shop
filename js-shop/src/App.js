@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react'
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import ProductAll from './pages/ProductAll';
@@ -17,12 +17,16 @@ import NavBar from './components/NavBar';
 
 
 function App() {
+  const [authenticate, setAuthenticate] = useState(false)
+  useEffect(()=>{
+    console.log("AAA")
+  },[authenticate])
   return (
     <>
       <NavBar />
       <Routes>
         <Route path="/" element={<ProductAll /> } />
-        <Route path="/login" element={<Login /> } />
+        <Route path="/login" element={<Login setAuthenticate={setAuthenticate} /> } />
         <Route path="/detail/:id" element={<ProductDetail /> } />
       </Routes>
     </>

@@ -6,6 +6,7 @@
   justify-content: flex-end;
   align-items: center;
   margin: 10px;
+  cursor: pointer;
 }
 h1{
   text-align: center;
@@ -48,4 +49,34 @@ li{
 .search-box input:focus{
   outline: none;
   border-bottom: 2px solid #D12323;
+}
+
+.product-list{
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.product-list li{
+  width: 300px;
+  overflow: hidden;
+}
+.product-list li img{
+  width: 100%;
+  margin: 0 auto;
+}
+.product-list li h3{
+  font-size: 20px;
+  width: 50%;
+  overflow: hidden;
+  white-space: nowrap; 
+  text-overflow: ellipsis;
+}
+.price-title-box{
+  display: flex;
+  justify-content: space-between;
+}
+
+.contianer{
+  width: 500px;
 }
