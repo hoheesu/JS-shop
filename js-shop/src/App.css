@@ -1,6 +1,12 @@
 *{
   margin: 0; padding: 0;
 }
+p{
+  margin: 0;
+}
+h3{
+  margin: 0;
+}
 .login-button{
   display: flex;
   justify-content: flex-end;
@@ -10,7 +16,7 @@
 }
 h1{
   text-align: center;
-  margin: 0;
+  margin-bottom: 30px;
 }
 .menu-area{
   display: flex;
@@ -51,32 +57,33 @@ li{
   border-bottom: 2px solid #D12323;
 }
 
-.product-list{
-  display: flex;
-  flex-wrap:wrap;
-  justify-content: center;
-  gap: 10px;
-}
-.product-list li{
-  width: 300px;
+.product-card{
   overflow: hidden;
 }
-.product-list li img{
+.product-card img{
   width: 100%;
-  margin: 0 auto;
 }
-.product-list li h3{
-  font-size: 20px;
-  width: 50%;
-  overflow: hidden;
+.product-card h3{
+  overflow: hidden; 
   white-space: nowrap; 
   text-overflow: ellipsis;
+  width: 70%;
+  font-size: 20px; 
+  font-weight: bold;
 }
-.price-title-box{
-  display: flex;
-  justify-content: space-between;
+.product-card p{
+  display: block;
+  height: 20px;
+}
+.product-card .choice{
+  color: darkgoldenrod;
+}
+.product-card .new{
+  color: darkred;
+  margin-bottom: 20px;
 }
 
-.contianer{
-  width: 500px;
+.product-img{
+  display: flex;
+  justify-content: flex-end;
 }

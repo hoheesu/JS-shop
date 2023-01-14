@@ -1,24 +1,37 @@
 import React ,{ useEffect, useState }from 'react'
 import ProductCard from '../components/ProductCard'
+import { Container, Row, Col } from "react-bootstrap"
+import { useSearchParams } from 'react-router-dom'
 
 function ProductAll() {
   const [productList,setProductList] = useState([])
+  const [query,setQuery] = useSearchParams();
+  
   const getProducts = async() => {
-    let url = `http://localhost:5000/products`
+    let searchQuery = query.get('q') || ""
+    console.log("query?",searchQuery)
+
+    let url = `https://my-json-server.typicode.com/hoheesu/JS-shop/products?q=${searchQuery}`
     let res = await fetch(url)
     let data = await res.json()
     console.log(data)
     setProductList(data)
   }
-  console.log(productList)
+
   useEffect(() =>{
     getProducts()
-  },[])
+  },[query])
 
   return (
     <div>
-      <h1>전체상품페이지</h1>
-      <ProductCard productList={productList} />
+      <Container>
+        <Row>
+          {productList.map((menu) => (
+            <Col lg={3}><ProductCard item={menu}/></Col>
+          ))}
+        </Row>
+      </Container>
+
     </div>
   )
 }

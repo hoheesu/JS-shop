@@ -1,7 +1,6 @@
 import React from 'react'
 import { Form, Button , Container} from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function Login({ setAuthenticate }) {
